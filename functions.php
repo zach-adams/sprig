@@ -8,8 +8,7 @@
  * Please note that missing files will produce a fatal error.
  */
 $sprig_includes = array(
-  //'inc/blade.php',                  // Load Laravel's Blade Templating Engine
-  //'inc/twig.php',                   // Load Twig Templating Engine
+  'inc/twigpress.php',                   // Load TwigPress Engine
   'inc/utils.php',                  // Utility functions
   'inc/init.php',                   // Initial theme setup and constants
   'inc/config.php',                 // Configuration

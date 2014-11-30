@@ -165,12 +165,13 @@
 			self::add_global_functions();
 		}
 
+        # MODIFICATION: Changed get_stylesheet_directory() to dirname(__FILE__)
 		private function setup_twig_environment_options() {
 			self::$twig_environment_settings = array(
 				'charset' => get_bloginfo('charset'),
 				'autoescape' => false,
 				'auto_reload' => true,
-				'cache' => get_stylesheet_directory() . '/twig_cache'
+				'cache' => dirname(__FILE__) . '/twig_cache'
 			);
 		}
 

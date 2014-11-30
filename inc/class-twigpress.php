@@ -149,7 +149,8 @@
 		 */
 		public function setup_twig_environment() {
 			# Include the Twig Autoloader and register Twig
-			require_once(WP_CONTENT_DIR . '/Twig/Autoloader.php');
+            # MODIFICATION: changed from WP_CONTENT_DIR to dirname(__FILE__)
+			require_once(dirname(__FILE__) . '/Twig/Autoloader.php');
 			Twig_Autoloader::register();
 
 			# Setup options for the Twig environment

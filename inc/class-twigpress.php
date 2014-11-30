@@ -53,8 +53,10 @@
 		 * @since 1.0.0
 		 *
 		 * @var string
+         *
+         * MODIFICATION: Commented out unnecessary variable
 		 */
-		private static $plugin_path;
+		// private static $plugin_path;
 
 		/**
 		 * The Twig Loader Object
@@ -108,22 +110,15 @@
 		 * Initialize the plugin.
 		 *
 		 * @since     1.0.0
+         *
+         * MODIFICATIONS: Removed everything in this function except for init and template_include action and filters
 		 */
 		private function __construct() {
-			self::$plugin_path = plugin_dir_path(__FILE__);
+            # Set up the action for setting up the Twig environment
+            add_action('init', array($this, 'setup_twig_environment'), 0, 0);
 
-			if(is_admin()) {
-				# Check that Twig is installed, if not we place a notice in the Admin
-				if(false == file_exists(WP_CONTENT_DIR . '/Twig/Autoloader.php')) {
-					add_action('admin_notices', array($this, 'twig_files_not_found_notification'), 0, 0);
-				}
-			} else {
-				# Set up the action for setting up the Twig environment
-				add_action('init', array($this, 'setup_twig_environment'), 0, 0);
-
-				# Add a filter to retrieve the name of the template WordPress is going to use
-				add_filter('template_include', array($this, 'get_chosen_template_name'), 10, 1);
-			}
+            # Add a filter to retrieve the name of the template WordPress is going to use
+            add_filter('template_include', array($this, 'get_chosen_template_name'), 10, 1);
 		}
 
 		/**

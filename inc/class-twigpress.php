@@ -228,6 +228,8 @@
 
 				self::$twig_environment->addFunction($function, new Twig_Function_Function($function));
 			}
+            # MODIFICATION: Added new function for 'fn' which calls exec_function
+            self::$twig_environment->addFunction(new Twig_SimpleFunction( 'fn', array( $this, 'exec_function' ) ) );
 		}
 
 		/**
@@ -267,4 +269,13 @@
 		public function get_chosen_template_name($template) {
 			return self::$template = $template;
 		}
+
+        /**
+         * MODIFICATION: New function that allows functions to be called within twig templates
+         */
+        public function exec_function( $function_name ) {
+            $args = func_get_args();
+            array_shift( $args );
+            return call_user_func_array( trim( $function_name ), ( $args ) );
+        }
 	}

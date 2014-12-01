@@ -8,7 +8,6 @@
  * Please note that missing files will produce a fatal error.
  */
 $sprig_includes = array(
-  'inc/twigpress.php',                   // Load TwigPress Engine
   'inc/utils.php',                  // Utility functions
   'inc/init.php',                   // Initial theme setup and constants
   'inc/config.php',                 // Configuration
@@ -18,7 +17,8 @@ $sprig_includes = array(
   'inc/gallery.php',                // Custom [gallery] modifications
   'inc/comments.php',               // Custom comments modifications
   'inc/scripts.php',                // Scripts and stylesheets
-  'inc/extras.php'                  // Custom functions
+  'inc/extras.php',                  // Custom functions
+  'inc/twigpress.php'                   // Load TwigPress Engine
 );
 
 foreach ($sprig_includes as $file) {

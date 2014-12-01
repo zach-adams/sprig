@@ -1,5 +1,13 @@
 <?php
 /**
+ * Additional functions to include in Twig Templates
+ */
+$additional_functions = array(
+    'get_sidebar',
+    'edit_post_link'
+);
+
+/**
  * Enable theme features
  */
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
@@ -21,3 +29,11 @@ if (!defined('WP_ENV')) {
  * Default: 1140px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 1140; }
+
+add_filter('twigpress_twig_global_functions', 'add_functions');
+function add_functions($functions) {
+    foreach ($GLOBALS['additional_functions'] as $additional_function) {
+        array_push($functions, $additional_function);
+    }
+    return $functions;
+}

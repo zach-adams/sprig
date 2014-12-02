@@ -107,13 +107,6 @@
 		public static $template;
 
 		/**
-		 * MODIFICATION: Added variable to allow us to pass through a TwigProxy object
-		 *
-		 * @var TwigProxy
-		 */
-		public static $wpproxy;
-
-		/**
 		 * Initialize the plugin.
 		 *
 		 * @since     1.0.0
@@ -162,12 +155,9 @@
 			self::$twig_loader = new Twig_Loader_Filesystem(get_stylesheet_directory() . '/twigs');
 			self::$twig_environment = new Twig_Environment(self::$twig_loader, self::$twig_environment_settings);
 
-			# MODIFICATION: Added TwigProxy loader
-			self::$wpproxy = new TwigProxy();
-
 			# Run our functions for adding global functions and variables to the environment
-			//self::add_global_variables();
-			//self::add_global_functions();
+			self::add_global_variables();
+			self::add_global_functions();
 		}
 
         # MODIFICATION: Changed get_stylesheet_directory() to dirname(__FILE__)
@@ -217,15 +207,12 @@
 		 */
 		private function add_global_functions() {
 			# Here we set some default functions to be added
-            # MODIFICATIONS: Added bloginfo to global_functions array
 			self::$global_functions = array (
 				'wp_head',
 				'wp_footer',
 				'wp_title',
 				'body_class',
-				'wp_nav_menu',
-                'bloginfo',
-                'the_content'
+				'wp_nav_menu'
 			);
 
 			# Apply a filter to allow the global functions array to be altered
@@ -258,10 +245,8 @@
 			 * Allow users to add variables to every template just before rendering. This means that all functions
 			 * and data the page has access to are available.
 			 */
-			//$vals = apply_filters('twigpress_twig_post_template_vars', $vals);
-			$vals = array(
-				'wp' => self::$wpproxy
-			);
+			$vals = apply_filters('twigpress_twig_post_template_vars', $vals);
+
 			return self::$twig_environment->render($template, $vals);
 		}
 

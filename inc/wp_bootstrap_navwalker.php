@@ -204,17 +204,3 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 		}
 	}
 }
-function getBootstrapNavwalker() {
-    $args = array(
-        'menu'              => 'primary-navigation',
-        'theme_location'    => 'primary-navigation',
-        'depth'             => 2,
-        'container'         => 'div',
-        'container_class'   => 'collapse navbar-collapse',
-        'container_id'      => '',
-        'menu_class'        => 'nav navbar-nav',
-        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-        'walker'            => new wp_bootstrap_navwalker()
-    );
-    return $args;
-}

@@ -24,9 +24,14 @@
 	 */
 
 
-	# MODIFICATION: Removed check if called directly
+	# If this file is called directly, abort.
+	if (!defined('WPINC')) {
+		die;
+	}
 
-    # MODIFICATION: Removed require once as it is loaded in functions.php
+	# Bring in the TwigPress class file
+    # MODIFICATION: changes from plugin_dir_path to dirname(__FILE__)
+	require_once(dirname(__FILE__) . '/class-twigpress.php');
 
 	TwigPress::get_instance();
 

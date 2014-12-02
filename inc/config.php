@@ -3,15 +3,8 @@
  * Additional functions to include in Twig Templates
  */
 $additional_functions = array(
-    'dynamic_sidebar',
     'get_sidebar',
-    'language_attributes',
-    'get_feed_link',
-    'esc_url',
-    'home_url',
-    'getBootstrapNavwalker',
-    'sprig_title',
-    'twigpress_get_the_content'
+    'edit_post_link'
 );
 
 /**

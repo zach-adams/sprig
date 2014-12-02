@@ -1,2 +1,10 @@
-<h1>Page</h1>
-{{ site.url }}
+{% extends('layouts/base.twig') %}
+
+{% block content %}
+    {% if wp.have_posts() %}
+        {% for wp.have_posts() %}
+            {{ wp.the_post() }}
+            {{ wp.get_the_content() }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}

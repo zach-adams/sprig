@@ -195,7 +195,7 @@
 			 * and data the page has access to are available.
 			 */
 			$vals = array(
-				'wp'	=>	$twig_proxy;
+				'wp'	=>	$twig_proxy
 			);
 
 			return self::$twig_environment->render($template, $vals);

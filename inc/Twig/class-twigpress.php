@@ -171,68 +171,6 @@
 		}
 
 		/**
-		 * This function is responsible for adding global variables to the system
-		 *
-		 * @since 1.0.0
-		 */
-		private function add_global_variables() {
-			# Here we set some default global variables
-			self::$global_variables = array(
-				'site' => array(
-					'lang_attributes' => get_bloginfo('language'),
-					'charset' => get_bloginfo('charset'),
-					'url' => get_bloginfo('url'),
-					'stylesheet_directory' => get_stylesheet_directory_uri(),
-					'title' => get_bloginfo('name'),
-					'description' => get_bloginfo('description')
-				)
-			);
-
-			# Apply a filter to let users add variables to the globals
-			self::$global_variables = apply_filters('twigpress_twig_site_variables', self::$global_variables);
-
-			# Let's iterate through our variables array and add them to the environment
-			foreach(self::$global_variables as $name => $val) {
-				self::$twig_environment->addGlobal($name, $val);
-			}
-		}
-
-		/**
-		 * This function is responsible for adding global functions to the system
-		 *
-		 * Some of the WordPress functions, such as wp_head() and wp_foot() don't have an equivalent function
-		 * that returns instead of echoes so we need to make functions such as these available within Twig templates
-		 *
-		 * @since 1.0.0
-		 */
-		private function add_global_functions() {
-			# Here we set some default functions to be added
-			self::$global_functions = array (
-				'wp_head',
-				'wp_footer',
-				'wp_title',
-				'body_class',
-				'wp_nav_menu'
-			);
-
-			# Apply a filter to allow the global functions array to be altered
-			self::$global_functions = apply_filters('twigpress_twig_global_functions', self::$global_functions);
-
-			# Let's iterate through our functions array and make them available
-			foreach(self::$global_functions as $function) {
-				# If a string isn't passed, or the string is empty we can't add it to the environment
-				if( ! is_string($function) || empty($function)) {
-					echo 'Each index in the global functions array must be a string containing a function name, could not add "' . $function . '"';
-					continue;
-				}
-
-				self::$twig_environment->addFunction($function, new Twig_Function_Function($function));
-			}
-            # MODIFICATION: Added new function for 'fn' which calls exec_function
-            self::$twig_environment->addFunction(new Twig_SimpleFunction( 'fn', array( $this, 'exec_function' ) ) );
-		}
-
-		/**
 		 * A wrapper function for rendering templates
 		 *
 		 * @param   string   $template      The name of the template that is to be rendered

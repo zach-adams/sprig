@@ -31,7 +31,7 @@
 
 	# Bring in the TwigPress class file
     # MODIFICATION: changes from plugin_dir_path to dirname(__FILE__)
-	require_once(dirname(__FILE__) . '/class-twigpress.php');
+	require_once(dirname(__FILE__) . '/Twig/class-twigpress.php');
 
 	TwigPress::get_instance();
 

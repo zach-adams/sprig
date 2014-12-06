@@ -145,7 +145,7 @@
 		public function setup_twig_environment() {
 			# Include the Twig Autoloader and register Twig
             # MODIFICATION: changed from WP_CONTENT_DIR to dirname(__FILE__)
-			require_once(dirname(__FILE__) . '/Twig/Autoloader.php');
+			require_once(dirname(__FILE__) . '/Twig/Twig/Autoloader.php');
 			Twig_Autoloader::register();
 
 			# Setup options for the Twig environment
@@ -269,13 +269,4 @@
 		public function get_chosen_template_name($template) {
 			return self::$template = $template;
 		}
-
-        /**
-         * MODIFICATION: New function that allows functions to be called within twig templates
-         */
-        public function exec_function( $function_name ) {
-            $args = func_get_args();
-            array_shift( $args );
-            return call_user_func_array( trim( $function_name ), ( $args ) );
-        }
 	}

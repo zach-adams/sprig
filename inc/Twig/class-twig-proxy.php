@@ -3,7 +3,7 @@
 /*
  * The Proxy that allows us to use Wordpress functions in Twig Templates
  */
-class OurTwigProxy {
+class Twig_Proxy {
     public function __call($function, $arguments) {
 
         if (!function_exists($function)) {

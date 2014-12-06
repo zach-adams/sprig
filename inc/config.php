@@ -2,10 +2,15 @@
 /**
  * Additional functions to include in Twig Templates
  */
-$additional_functions = array(
-    'get_sidebar',
-    'edit_post_link'
-);
+function getBootstrapNavWalker() {
+	$return = array(
+		'theme_location' => 'primary_navigation',
+		'menu_class' => 'nav navbar-nav',
+		'walker' => new wp_bootstrap_navwalker(),
+		'container_class' => 'collapse navbar-collapse'
+	);
+	return $return;
+}
 
 /**
  * Enable theme features

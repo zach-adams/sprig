@@ -1,0 +1,18 @@
+{% include('includes/head.twig') %}
+
+<body {{ wp.body_class }} >
+
+  {% include('includes/header.twig') %}
+
+  <div class="wrap" role="document">
+    <div class="content">
+      {% block('content') %}{% endblock %}
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+
+  {% include('includes/footer.twig') %}
+
+  {% wp.wp_footer %}
+
+</body>
+</html>

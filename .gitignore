@@ -1,5 +1,5 @@
 node_modules/*
 .sass-cache/*
 src/vendor/*
-inc/twig_cache/*
+inc/Twig/twig_cache/*
 .DS_Store

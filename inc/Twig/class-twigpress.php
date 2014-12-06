@@ -107,6 +107,13 @@
 		public static $template;
 
 		/**
+		 * MODIFICATIONS: Added twig proxy variable
+		 * Variable to store the proxy to load Wordpress functions in Twig Templates
+		 *
+		 */
+		protected static $twig_proxy;
+
+		/**
 		 * Initialize the plugin.
 		 *
 		 * @since     1.0.0
@@ -146,6 +153,10 @@
 			# Include the Twig Autoloader and register Twig
             # MODIFICATION: changed from WP_CONTENT_DIR to dirname(__FILE__)
 			require_once(dirname(__FILE__) . '/Twig/Autoloader.php');
+
+			# MODIFICATION: Added require for Twig Proxy Class
+			require_once(dirname(__FILE__) . '/class-twig-proxy.php');
+
 			Twig_Autoloader::register();
 
 			# Setup options for the Twig environment
@@ -155,9 +166,9 @@
 			self::$twig_loader = new Twig_Loader_Filesystem(get_stylesheet_directory() . '/twigs');
 			self::$twig_environment = new Twig_Environment(self::$twig_loader, self::$twig_environment_settings);
 
-			# Run our functions for adding global functions and variables to the environment
-			self::add_global_variables();
-			self::add_global_functions();
+			# MODIFICATION: Removed variables and functions loader
+
+			self::$twig_proxy = new Twig_Proxy();
 		}
 
         # MODIFICATION: Changed get_stylesheet_directory() to dirname(__FILE__)
@@ -183,7 +194,9 @@
 			 * Allow users to add variables to every template just before rendering. This means that all functions
 			 * and data the page has access to are available.
 			 */
-			$vals = apply_filters('twigpress_twig_post_template_vars', $vals);
+			$vals = array(
+				'wp'	=>	$twig_proxy;
+			);
 
 			return self::$twig_environment->render($template, $vals);
 		}

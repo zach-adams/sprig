@@ -6,13 +6,13 @@
 
   <div class="wrap" role="document">
     <div class="content">
-      {% block('content') %}{% endblock %}
+      {% block content %}{% endblock %}
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 
   {% include('includes/footer.twig') %}
 
-  {% wp.wp_footer %}
+  {{ wp.wp_footer }}
 
 </body>
 </html>

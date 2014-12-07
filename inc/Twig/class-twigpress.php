@@ -232,6 +232,7 @@
 		}
 
 		/**
+		 * #MODIFICATION Added function to return Wordpress posts
 		 * Gets the Wordpress posts so we can load them into the Twig Template
 		 */
 		public function getPosts() {

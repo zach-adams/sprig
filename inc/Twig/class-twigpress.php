@@ -114,6 +114,14 @@
 		protected static $twig_proxy;
 
 		/**
+		 * MODIFICATIONS: Added posts variable so that the loop can be added easily
+		 * Variable to store the Wordpress posts
+		 *
+		 */
+		protected static $posts;
+
+
+		/**
 		 * Initialize the plugin.
 		 *
 		 * @since     1.0.0
@@ -126,6 +134,8 @@
 
             # Add a filter to retrieve the name of the template WordPress is going to use
             add_filter('template_include', array($this, 'get_chosen_template_name'), 10, 1);
+
+            self::$posts = $this->getPosts();
 		}
 
 		/**
@@ -167,7 +177,6 @@
 			self::$twig_environment = new Twig_Environment(self::$twig_loader, self::$twig_environment_settings);
 
 			# MODIFICATION: Removed variables and functions loader
-
 			self::$twig_proxy = new Twig_Proxy();
 		}
 
@@ -195,7 +204,8 @@
 			 * and data the page has access to are available.
 			 */
 			$vals = array(
-				'wp'	=>	self::$twig_proxy
+				'wp'	=>	self::$twig_proxy,
+				'posts'	=>	self::$posts
 			);
 
 			return self::$twig_environment->render($template, $vals);
@@ -219,5 +229,14 @@
 		 */
 		public function get_chosen_template_name($template) {
 			return self::$template = $template;
+		}
+
+		/**
+		 * Gets the Wordpress posts so we can load them into the Twig Template
+		 */
+		public function getPosts() {
+			$posts = get_posts();
+
+			return $posts;
 		}
 	}

@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ esc_url(home_url('/')) }}">{{ bloginfo('name') }}</a>
+      <a class="navbar-brand" href="{{ wp.home_url() }}">{{ wp.bloginfo('name') }}</a>
     </div>
 
     <nav class="collapse navbar-collapse" role="navigation">
-        @if(has_nav_menu('primary_navigation'))
-          {{ wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav', 'walker' => new wp_bootstrap_navwalker(), 'container_class' => 'collapse navbar-collapse',)) }}
-        @endif
+        {% if wp.has_nav_menu('primary_navigation') %}
+          {{ wp.wp_nav_menu(wp.getBootstrapNavWalker()) }}
+        {% endif %}
     </nav>
   </div>
 </header>

@@ -175,6 +175,7 @@
 			# Now we load the TWIG filesystem and environment
 			self::$twig_loader = new Twig_Loader_Filesystem(get_stylesheet_directory() . '/twigs');
 			self::$twig_environment = new Twig_Environment(self::$twig_loader, self::$twig_environment_settings);
+			self::$twig_environment->addExtension(new Twig_Extension_Debug());
 
 			# MODIFICATION: Removed variables and functions loader
 			self::$twig_proxy = new Twig_Proxy();
@@ -186,7 +187,8 @@
 				'charset' => get_bloginfo('charset'),
 				'autoescape' => false,
 				'auto_reload' => true,
-				'cache' => dirname(__FILE__) . '/twig_cache'
+				'cache' => dirname(__FILE__) . '/twig_cache',
+				'debug' => true
 			);
 		}
 

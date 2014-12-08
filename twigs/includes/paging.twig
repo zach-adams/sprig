@@ -1,5 +1,4 @@
-{{ dump(wp.get_posts) }}
-{% if wp.get_posts.max_num_pages > 1 %}
+{% if wp_query.max_num_pages > 1 %}
     <nav class="post-nav">
         <ul class="pager">
             <li class="previous">{{ wp.next_posts_link('Older Posts') }}</li>

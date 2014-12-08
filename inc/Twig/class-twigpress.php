@@ -237,7 +237,6 @@
 		 */
 		public function getPosts() {
 			$posts = get_posts();
-
 			return $posts;
 		}
 	}

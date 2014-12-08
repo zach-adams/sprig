@@ -2,6 +2,6 @@
 
 {% block content %}
     {% for post in posts %} {{ wp.the_post }}
-        {% include wp.get_post_format ? 'content/content-' ~ wp.get_post_format ~ '.php' : 'content/content.php' %}
+        {% include wp.get_post_format ? 'content/content-' ~ wp.get_post_format ~ '.twig' : 'content/content.twig' %}
     {% endfor %}
 {% endblock %}

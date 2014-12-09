@@ -1,0 +1,87 @@
+{% if wp.post_password_required == false and wp.comments_open %}
+    <h3>Comments</h3>
+    {% set comments = wp.get_comments({'post_id':postid},{'status':'approve'}) %}
+    <section id="comments">
+        {% if comments is not empty %}
+            <ol class="media-list">
+                {{ wp.wp_list_comments(wp.getCommentWalker, comments) }}
+            </ol>
+            {% if wp.get_comment_pages_count > 1 and wp.get_option('page_comments') %}
+                <nav>
+                    <ul class="pager">
+                        {% if wp.get_previous_comments_link %}
+                            <li class="previous">{{ wp.previous_comments_link('Older comments') }}</li>
+                        {% endif %}
+                        {% if wp.get_next_comments_link %}
+                            <li class="next">{{ wp.next_comments_link('Newer comments') }}</li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+            {% if wp.comments_open == false and wp.post_type_supports(wp.get_post_type, 'comments') %}
+            <div class="alert alert-warning">
+                Comments Are Closed
+            </div>
+            {% endif %}
+        {% elseif wp.comments_open == false and wp.post_type_supports(wp.get_post_type, 'comments') %}
+            <div class="alert alert-warning">
+                Comments Are Closed
+            </div>
+        {% else %}
+            <h4>No Comments!</h4>
+        {% endif %}
+    </section>
+    <section id="respond">
+        {% if wp.comments_open %}
+            <h3>{{ wp.comment_form_title('Leave a Reply', 'Leave a Reply to') }}</h3>
+            <p class="cancel-comment-reply">{{ wp.cancel_comment_reply_link }}</p>
+            {% if wp.get_option('comment_registration') and wp.is_user_logged_in == false %}
+                <p>You must be <a href="{{ wp.wp_login_url(wp.get_permalink()) }}">logged in</a> to post a comment.</p>
+            {% else %}
+                <form action="{{ wp.get_option('siteurl') }}/wp-comments-post.php" method="post" id="commentform">
+                {% if wp.is_user_logged_in %}
+                    <p>
+                        Logged in as <a href="{{ wp.get_option('siteurl') }}/wp-admin/profile.php">{{ userinfo.display_name }}</a>
+                        <a href="{{ wp.wp_logout_url(wp.get_permalink()) }}" title="Log out of this account">Log Out</a>
+                    </p>
+                {% else %}
+                    {% if wp.get_option('require_name_email') == true %}
+                        <div class="form-group">
+                            <label for="author">Name required</label>
+                            <input type="text" class="form-control" name="author" id="author" size="22" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (will not be published) required</label>
+                            <input type="email" class="form-control" name="email" id="email" size="22" aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Website</label>
+                            <input type="url" class="form-control" name="url" id="url" size="22">
+                        </div>
+                    {% else %}
+                        <div class="form-group">
+                            <label for="author">Name</label>
+                            <input type="text" class="form-control" name="author" id="author" size="22">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (will not be published)</label>
+                            <input type="email" class="form-control" name="email" id="email" size="22">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">Website</label>
+                            <input type="url" class="form-control" name="url" id="url" size="22">
+                        </div>
+                    {% endif %}
+                {% endif %}
+                    <div class="form-group">
+                        <label for="comment">Comment</label>
+                        <textarea name="comment" id="comment" class="form-control" rows="5" aria-required="true"></textarea>
+                    </div>
+                    <p><input name="submit" class="btn btn-primary" type="submit" id="submit" value="Submit Comment"></p>
+                {{ wp.comment_id_fields }}
+                {{ wp.do_action('comment_form', postid) }}
+                </form>
+            {% endif %}
+        {% endif %}
+    </section>
+{% endif %}

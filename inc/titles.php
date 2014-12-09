@@ -2,36 +2,53 @@
 /**
  * Page titles
  */
-function sprig_title() {
-  if (is_home()) {
-    if (get_option('page_for_posts', true)) {
-      return get_the_title(get_option('page_for_posts', true));
-    } else {
-      return __('Latest Posts', 'sprig');
-    }
-  } elseif (is_archive()) {
-    $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-    if ($term) {
-      return apply_filters('single_term_title', $term->name);
-    } elseif (is_post_type_archive()) {
-      return apply_filters('the_title', get_queried_object()->labels->name);
-    } elseif (is_day()) {
-      return sprintf(__('Daily Archives: %s', 'sprig'), get_the_date());
-    } elseif (is_month()) {
-      return sprintf(__('Monthly Archives: %s', 'sprig'), get_the_date('F Y'));
-    } elseif (is_year()) {
-      return sprintf(__('Yearly Archives: %s', 'sprig'), get_the_date('Y'));
-    } elseif (is_author()) {
-      $author = get_queried_object();
-      return sprintf(__('Author Archives: %s', 'sprig'), apply_filters('the_author', is_object($author) ? $author->display_name : null));
-    } else {
-      return single_cat_title('', false);
-    }
-  } elseif (is_search()) {
-    return sprintf(__('Search Results for %s', 'sprig'), get_search_query());
-  } elseif (is_404()) {
-    return __('Not Found', 'sprig');
-  } else {
-    return get_the_title();
-  }
+function sprig_title($before = '', $after = '' ) {
+	if ( is_category() ) {
+		$title = sprintf( __( 'Category: %s', '_s' ), single_cat_title( '', false ) );
+	} elseif ( is_tag() ) {
+		$title = sprintf( __( 'Tag: %s', '_s' ), single_tag_title( '', false ) );
+	} elseif ( is_author() ) {
+		$title = sprintf( __( 'Author: %s', '_s' ), '<span class="vcard">' . get_the_author() . '</span>' );
+	} elseif ( is_year() ) {
+		$title = sprintf( __( 'Year: %s', '_s' ), get_the_date( _x( 'Y', 'yearly archives date format', '_s' ) ) );
+	} elseif ( is_month() ) {
+		$title = sprintf( __( 'Month: %s', '_s' ), get_the_date( _x( 'F Y', 'monthly archives date format', '_s' ) ) );
+	} elseif ( is_day() ) {
+		$title = sprintf( __( 'Day: %s', '_s' ), get_the_date( _x( 'F j, Y', 'daily archives date format', '_s' ) ) );
+	} elseif ( is_tax( 'post_format', 'post-format-aside' ) ) {
+		$title = _x( 'Asides', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+		$title = _x( 'Galleries', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+		$title = _x( 'Images', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+		$title = _x( 'Videos', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+		$title = _x( 'Quotes', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+		$title = _x( 'Links', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+		$title = _x( 'Statuses', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+		$title = _x( 'Audio', 'post format archive title', '_s' );
+	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+		$title = _x( 'Chats', 'post format archive title', '_s' );
+	} elseif ( is_post_type_archive() ) {
+		$title = sprintf( __( 'Archives: %s', '_s' ), post_type_archive_title( '', false ) );
+	} elseif ( is_tax() ) {
+		$tax = get_taxonomy( get_queried_object()->taxonomy );
+		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+		$title = sprintf( __( '%1$s: %2$s', '_s' ), $tax->labels->singular_name, single_term_title( '', false ) );
+	} else {
+		$title = __( 'Archives', '_s' );
+	}
+	/**
+	 * Filter the archive title.
+	 *
+	 * @param string $title Archive title to be displayed.
+	 */
+	$title = apply_filters( 'get_the_archive_title', $title );
+	if ( ! empty( $title ) ) {
+		echo $before . $title . $after;
+	}
 }

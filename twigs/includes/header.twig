@@ -12,12 +12,22 @@
 
     <nav class="collapse navbar-collapse" role="navigation">
         {% if wp.has_nav_menu('primary_navigation') %}
-            {{ wp.wp_nav_menu({
-              'theme_location':'primary_navigation',
-              'menu_class':'nav navbar-nav',
-              'walker': wp.returnObject('wp_bootstrap_navwalker'),
-              'container_class':'collapse navbar-collapse'
-            }) }}
+            <div class="collapse navbar-collapse">
+                {{ wp.wp_nav_menu({
+                    'theme_location':'primary_navigation',
+                    'menu_class':'nav navbar-nav',
+                    'walker': wp.returnObject('wp_bootstrap_navwalker'),
+                    'container':false,
+                    'depth':3,
+                    'fallback_cb':'wp_bootstrap_navwalker::fallback'
+                }) }}
+                <form id="searchform" class="navbar-form navbar-right" role="search" action="{{ wp.site_url() }}" method="get">
+                    <div class="form-group">
+                        <input id="s" name="s" type="text" class="form-control" placeholder="" value="{{ wp.get_search_query() }}">
+                    </div>
+                    <button id="searchsubmit" type="submit" class="btn btn-default">Search</button>
+                </form>
+            </div>
         {% endif %}
     </nav>
   </div>

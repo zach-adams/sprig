@@ -3,6 +3,7 @@
 {% block content %}
     {% for post in posts %} {{ wp.the_post }}
         {% include 'content/content-excerpt.twig' %}
+        <hr/>
     {% endfor %}
     {% include 'includes/paging.twig' %}
 {% endblock %}

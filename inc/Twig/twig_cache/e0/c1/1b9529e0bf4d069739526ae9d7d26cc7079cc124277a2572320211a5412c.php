@@ -16,42 +16,39 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "
-<article id=\"post-";
-        // line 2
+        echo "<article id=\"post-";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_ID", array());
         echo "\" ";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "post_class", array());
         echo ">
     <header class=\"page-header\">
         <h1>";
-        // line 4
+        // line 3
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_title", array());
         echo "</h1>
     </header>
     <div class=\"entry-content\">
         ";
-        // line 7
+        // line 6
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_content", array());
         echo "
         ";
-        // line 8
+        // line 7
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "wp_link_pages", array(0 => array("echo" => "0")), "method");
         echo "
     </div><!-- .entry-content -->
 
     <footer class=\"entry-footer\">
         ";
-        // line 12
+        // line 11
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "edit_post_link", array());
         echo "
     </footer><!-- .entry-footer -->
-
-    ";
+</article><!-- #post-## -->
+<hr/>
+";
         // line 15
         echo twig_include($this->env, $context, "includes/comments.twig");
-        echo "
-</article><!-- #post-## -->";
     }
 
     public function getTemplateName()
@@ -66,6 +63,6 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
 
     public function getDebugInfo()
     {
-        return array (  52 => 15,  46 => 12,  39 => 8,  35 => 7,  29 => 4,  22 => 2,  19 => 1,);
+        return array (  51 => 15,  44 => 11,  37 => 7,  33 => 6,  27 => 3,  19 => 1,);
     }
 }

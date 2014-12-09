@@ -1,13 +1,13 @@
-<article id="post-{{ wp.the_ID }}">
-    <header class="entry-header">
-        <h1 class="entry-title"><a href="{{ wp.the_permalink }}" title="{{ wp.the_title }}">{{ wp.the_title }}</a></h1>
-
-        <div class="entry-meta">
-            {% include 'includes/entry-meta.twig' %}
-        </div><!-- .entry-meta -->
-    </header><!-- .entry-header -->
-
-    <div class="entry-content">
-        {{ wp.the_excerpt }}
-    </div><!-- .entry-content -->
-</article><!-- #post-## -->
+<article id="post-{{ wp.the_ID }}" {{ wp.post_class }}>
+    <div class="media">
+        {% if wp.has_post_thumbnail %}
+            <a class="media-left" href="{{ wp.the_permalink }}" title="{{ wp.the_title }}">
+                {{ wp.the_post_thumbnail('thumbnail') }}
+            </a>
+        {% endif %}
+        <div class="media-body">
+            <h4 class="media-heading"><a href="{{ wp.the_permalink }}" title="{{ wp.the_title }}">{{ wp.the_title }}</a></h4>
+            {{ wp.the_excerpt }}
+        </div>
+    </div>
+</article>

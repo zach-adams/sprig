@@ -1,0 +1,17 @@
+<article id="post-{{ wp.the_ID }}">
+    <header class="entry-header">
+        <h1 class="entry-title">{{ wp.the_title }}</h1>
+
+        <div class="entry-meta">
+            {% include 'includes/entry-meta.twig' %}
+        </div><!-- .entry-meta -->
+    </header><!-- .entry-header -->
+
+    <div class="entry-content">
+        {{ wp.the_content }}
+    </div><!-- .entry-content -->
+
+    <footer class="entry-footer">
+
+    </footer><!-- .entry-footer -->
+</article><!-- #post-## -->

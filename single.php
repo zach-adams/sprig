@@ -1,7 +1,2 @@
-@layout( 'templates.layouts.normal' )
-
-@section('page-content')
-
-	@include('templates.content.single')
-
-@endsection
+<?php
+twigpress_render_twig_template();

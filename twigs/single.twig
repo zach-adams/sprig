@@ -1,0 +1,11 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            {% for post in posts %}{{ wp.the_post }}
+                {% include 'content/content-single.twig' %}
+            {% endfor %}
+        </main><!-- #main -->
+    </div><!-- #primary -->
+{% endblock %}

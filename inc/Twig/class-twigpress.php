@@ -199,9 +199,7 @@
 			$vals = array(
 				'wp'	    =>	self::$twig_proxy,
 				'posts'	    =>	$this->getPosts(),
-				'wp_query'  =>  $this->wpQuery(),
-				'postid'    =>  $this->getPostID(),
-				'userinfo'  =>  $this->userInfo()
+				'wp_query'  =>  $this->wpQuery()
 			);
 
 			return self::$twig_environment->render($template, $vals);
@@ -237,27 +235,11 @@
 		}
 
 		/**
-		 * MODIFICATION Added function to return the postid for use in Twig Template
-		 */
-		public function getPostID() {
-			$postid = get_the_ID();
-			return $postid;
-		}
-
-		/**
 		 * MODIFICATION Added function to return main Wordpress query
 		 * Gets the main Wordpress query for use in Twig Templates
 		 */
 		public function wpQuery() {
 			global $wp_query;
 			return $wp_query;
-		}
-
-		/**
-		 * MODIFICATION Added function to return current user info
-		 */
-		public function userInfo() {
-			$userinfo = wp_get_current_user();
-			return $userinfo;
 		}
 	}

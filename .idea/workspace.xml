@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="paging.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/twigs/includes/paging.twig">
+      <file leaf-file-name="comments.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/twigs/includes/comments.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
+              <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -60,11 +60,33 @@
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/inc/twig/model.php" />
         <option value="$PROJECT_DIR$/inc/twig/controller.php" />
+        <option value="$PROJECT_DIR$/twigs/page.twig" />
+        <option value="$PROJECT_DIR$/twigs/base.twig" />
+        <option value="$PROJECT_DIR$/single.php" />
+        <option value="$PROJECT_DIR$/twigs/single.twig" />
+        <option value="$PROJECT_DIR$/twigs/includes/entry-meta.twig" />
         <option value="$PROJECT_DIR$/twigs/content/content.twig" />
+        <option value="$PROJECT_DIR$/404.php" />
+        <option value="$PROJECT_DIR$/twigs/404.twig" />
+        <option value="$PROJECT_DIR$/twigs/content/content-404.twig" />
+        <option value="$PROJECT_DIR$/archive.php" />
+        <option value="$PROJECT_DIR$/twigs/index.twig" />
+        <option value="$PROJECT_DIR$/twigs/includes/paging.twig" />
+        <option value="$PROJECT_DIR$/twigs/content/content-none.twig" />
         <option value="$PROJECT_DIR$/twigs/home.twig" />
+        <option value="$PROJECT_DIR$/twigs/content/content-excerpt.twig" />
+        <option value="$PROJECT_DIR$/twigs/includes/head.twig" />
+        <option value="$PROJECT_DIR$/search.php" />
+        <option value="$PROJECT_DIR$/inc/titles.php" />
+        <option value="$PROJECT_DIR$/twigs/search.twig" />
+        <option value="$PROJECT_DIR$/twigs/archive.twig" />
+        <option value="$PROJECT_DIR$/twigs/comments.twig" />
+        <option value="$PROJECT_DIR$/comments.php" />
         <option value="$PROJECT_DIR$/inc/config.php" />
         <option value="$PROJECT_DIR$/inc/Twig/class-twigpress.php" />
-        <option value="$PROJECT_DIR$/twigs/includes/paging.twig" />
+        <option value="$PROJECT_DIR$/twigs/content/content-single.twig" />
+        <option value="$PROJECT_DIR$/twigs/content/content-page.twig" />
+        <option value="$PROJECT_DIR$/twigs/includes/comments.twig" />
       </list>
     </option>
   </component>
@@ -108,6 +130,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,19 +231,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sprig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sprig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Twig" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="preferences.general" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/includes/paging.twig&#10;config&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/config.php&#10;paging&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/includes/paging.twig&#10;class-twig&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/Twig/class-twigpress.php&#10;home.twi&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/home.twig&#10;inde&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/index.twig&#10;fun&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/functions.php&#10;in&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/index.php&#10;page&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/page.twig.php&#10;ind&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/index.php&#10;twig&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/twig.php&#10;main-con&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/blade/application/controllers/main-controller.php&#10;main&#9;null&#9;null&#10;blade&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/blade.php" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/Twig/class-twigpress.php&#10;class-&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/Twig/class-twigpress.php&#10;twigpress&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/twigpress.php&#10;page&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/page.twig&#10;class&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/Twig/class-twigpress.php&#10;head.&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/includes/head.twig&#10;config&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/config.php&#10;paging&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/includes/paging.twig&#10;class-twig&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/Twig/class-twigpress.php&#10;home.twi&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/home.twig&#10;inde&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/twigs/index.twig&#10;fun&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/functions.php&#10;in&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/index.php&#10;ind&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/index.php&#10;twig&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/twig.php&#10;main-con&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/blade/application/controllers/main-controller.php&#10;main&#9;null&#9;null&#10;blade&#9;FILE&#9;file:///Users/zach/Dropbox/vagrant/www/wordpress-default/wp-content/themes/sprig/inc/blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../moveyouroffice/htdocs" />
     <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/twigs/content" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/twigs/includes" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -237,9 +285,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -248,9 +293,15 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d6b0ff60-5772-43bf-8321-5ec0ffa3cc9e" name="Default" comment="" />
@@ -271,19 +322,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21319444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18888889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295238" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -315,6 +366,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/twigs/content/content.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="782">
+          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/Twig/class-twigpress.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8296" max-vertical-offset="8908">
+          <caret line="248" column="35" selection-start-line="248" selection-start-column="35" selection-end-line="248" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/includes/paging.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../../wp-config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06476191" vertical-offset="0" max-vertical-offset="1836">
@@ -330,20 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/404.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inc/utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21714285" vertical-offset="112" max-vertical-offset="1258">
@@ -351,10 +412,201 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.bowerrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/includes/entry-meta.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039952997" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="122" selection-start-line="0" selection-start-column="122" selection-end-line="0" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6761364" vertical-offset="0" max-vertical-offset="704">
-          <caret line="14" column="14" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.09054594" vertical-offset="0" max-vertical-offset="751">
+          <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/404.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19976498" vertical-offset="0" max-vertical-offset="851">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039952997" vertical-offset="0" max-vertical-offset="851">
+          <caret line="1" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/comments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2550">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/extras.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/gallery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4760">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/wp_bootstrap_navwalker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7106">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/includes/paging.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/content-none.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23971798" vertical-offset="0" max-vertical-offset="851">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/base.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23971798" vertical-offset="0" max-vertical-offset="851">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039952997" vertical-offset="0" max-vertical-offset="851">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039952997" vertical-offset="0" max-vertical-offset="851">
+          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/home.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15981199" vertical-offset="0" max-vertical-offset="851">
+          <caret line="4" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/index.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31962398" vertical-offset="0" max-vertical-offset="851">
+          <caret line="7" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/titles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31962398" vertical-offset="0" max-vertical-offset="2244">
+          <caret line="8" column="70" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/content-404.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="42" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/content.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11985899" vertical-offset="0" max-vertical-offset="851">
+          <caret line="2" column="119" selection-start-line="2" selection-start-column="119" selection-end-line="2" selection-end-column="119" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/search.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27967098" vertical-offset="0" max-vertical-offset="851">
+          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/archive.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27967098" vertical-offset="0" max-vertical-offset="851">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/content-excerpt.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47943595" vertical-offset="0" max-vertical-offset="851">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -368,29 +620,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/twigs/includes/head.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.19976498" vertical-offset="0" max-vertical-offset="1122">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twigs/content/content.twig">
+    <entry file="file://$PROJECT_DIR$/archive.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.039952997" vertical-offset="0" max-vertical-offset="851">
+          <caret line="1" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twigs/home.twig">
+    <entry file="file://$PROJECT_DIR$/twigs/page.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27967098" vertical-offset="0" max-vertical-offset="851">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.35957697" vertical-offset="0" max-vertical-offset="851">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twigs/index.twig">
+    <entry file="file://$PROJECT_DIR$/twigs/single.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23971798" vertical-offset="0" max-vertical-offset="851">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/empty.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -400,24 +660,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47943595" vertical-offset="0" max-vertical-offset="1700">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.59929496" vertical-offset="0" max-vertical-offset="1904">
+          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/twigpress.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.159812" vertical-offset="1223" max-vertical-offset="2788">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/includes/comments.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inc/Twig/class-twigpress.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28084606" vertical-offset="7139" max-vertical-offset="9146">
-          <caret line="216" column="47" selection-start-line="216" selection-start-column="47" selection-end-line="216" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.60047" vertical-offset="6391" max-vertical-offset="9214">
+          <caret line="203" column="49" selection-start-line="203" selection-start-column="49" selection-end-line="203" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twigs/includes/paging.twig">
+    <entry file="file://$PROJECT_DIR$/twigs/content/content-single.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.8390129" vertical-offset="0" max-vertical-offset="986">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/content/content-page.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55934197" vertical-offset="0" max-vertical-offset="851">
+          <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twigs/includes/comments.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3400">
+          <caret line="0" column="62" selection-start-line="0" selection-start-column="62" selection-end-line="0" selection-end-column="62" />
           <folding />
         </state>
       </provider>

@@ -8,11 +8,17 @@
     </header><!-- .entry-header -->
 
     <div class="entry-content">
+        {% if wp.has_post_thumbnail %}
+            {{ wp.the_post_thumbnail }}
+        {% endif %}
         {{ wp.the_content }}
         {{ wp.wp_link_pages('echo=0') }}
+
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
         {{ wp.edit_post_link }}
     </footer><!-- .entry-footer -->
+
+    {{ include('includes/comments.twig') }}
 </article><!-- #post-## -->

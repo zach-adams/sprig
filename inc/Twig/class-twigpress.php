@@ -113,18 +113,6 @@
 		 */
 		protected static $twig_proxy;
 
-		/**
-		 * MODIFICATIONS: Added posts variable so that the loop can be added easily
-		 * Variable to store the Wordpress posts
-		 */
-		protected static $posts;
-
-		/**
-		 * MODIFICATIONS: Added query variable so that the Wordpress query can be accessed in Twig Templates
-		 * Variable to store the Wordpress query
-		 */
-		protected static $wp_query;
-
 
 		/**
 		 * Initialize the plugin.
@@ -139,9 +127,6 @@
 
             # Add a filter to retrieve the name of the template WordPress is going to use
             add_filter('template_include', array($this, 'get_chosen_template_name'), 10, 1);
-
-            self::$posts = $this->getPosts();
-			self::$wp_query = $this->wpQuery();
 		}
 
 		/**
@@ -213,8 +198,8 @@
 			 */
 			$vals = array(
 				'wp'	    =>	self::$twig_proxy,
-				'posts'	    =>	self::$posts,
-				'wp_query'  =>  self::$wp_query
+				'posts'	    =>	$this->getPosts(),
+				'wp_query'  =>  $this->wpQuery()
 			);
 
 			return self::$twig_environment->render($template, $vals);
@@ -245,8 +230,8 @@
 		 * Gets the Wordpress posts so we can load them into the Twig Template
 		 */
 		public function getPosts() {
-			$posts = get_posts();
-			return $posts;
+			global $wp_query;
+			return $wp_query->posts;
 		}
 
 		/**

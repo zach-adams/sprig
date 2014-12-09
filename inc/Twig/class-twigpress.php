@@ -198,8 +198,8 @@
 			 */
 			$vals = array(
 				'wp'	    =>	self::$twig_proxy,
-				'posts'	    =>	$this->getPosts(),
-				'wp_query'  =>  $this->wpQuery()
+				'posts'	    =>	$this->get_posts(),
+				'wp_query'  =>  $this->wp_query()
 			);
 
 			return self::$twig_environment->render($template, $vals);
@@ -229,7 +229,7 @@
 		 * MODIFICATION Added function to return Wordpress posts
 		 * Gets the Wordpress posts so we can load them into the Twig Template
 		 */
-		public function getPosts() {
+		public function get_posts() {
 			global $wp_query;
 			return $wp_query->posts;
 		}
@@ -238,7 +238,7 @@
 		 * MODIFICATION Added function to return main Wordpress query
 		 * Gets the main Wordpress query for use in Twig Templates
 		 */
-		public function wpQuery() {
+		public function wp_query() {
 			global $wp_query;
 			return $wp_query;
 		}

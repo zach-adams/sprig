@@ -36,7 +36,7 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
         echo "
         ";
         // line 8
-        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "wp_link_pages", array(0 => "echo=0"), "method");
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "wp_link_pages", array(0 => array("echo" => "0")), "method");
         echo "
     </div><!-- .entry-content -->
 

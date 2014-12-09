@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for post in posts %} {{ wp.the_post }}
-        {% include wp.get_post_format ? 'content/content-' ~ wp.get_post_format ~ '.twig' : 'content/content.twig' %}
+        {% include 'content/content-excerpt.twig' %}
     {% endfor %}
     {% include 'includes/paging.twig' %}
 {% endblock %}

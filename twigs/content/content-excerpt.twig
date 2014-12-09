@@ -1,0 +1,13 @@
+<article id="post-{{ wp.the_ID }}">
+    <header class="entry-header">
+        <h1 class="entry-title"><a href="{{ wp.the_permalink }}" title="{{ wp.the_title }}">{{ wp.the_title }}</a></h1>
+
+        <div class="entry-meta">
+            {% include 'includes/entry-meta.twig' %}
+        </div><!-- .entry-meta -->
+    </header><!-- .entry-header -->
+
+    <div class="entry-content">
+        {{ wp.the_excerpt }}
+    </div><!-- .entry-content -->
+</article><!-- #post-## -->

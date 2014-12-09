@@ -20,3 +20,11 @@ function sprig_wp_title($title) {
   return $title;
 }
 add_filter('wp_title', 'sprig_wp_title', 10);
+
+
+/**
+ * Additional functions to include in Twig Templates
+ */
+function returnObject($obj) {
+	return new $obj;
+}

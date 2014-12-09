@@ -9,9 +9,10 @@
 
     <div class="entry-content">
         {{ wp.the_content }}
+        {{ wp.wp_link_pages('echo=0') }}
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-
+        {{ wp.edit_post_link }}
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

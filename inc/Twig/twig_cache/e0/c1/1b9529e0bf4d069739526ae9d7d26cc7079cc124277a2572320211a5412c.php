@@ -46,6 +46,11 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "edit_post_link", array());
         echo "
     </footer><!-- .entry-footer -->
+
+    ";
+        // line 15
+        echo twig_include($this->env, $context, "includes/comments.twig");
+        echo "
 </article><!-- #post-## -->";
     }
 
@@ -61,6 +66,6 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
 
     public function getDebugInfo()
     {
-        return array (  46 => 12,  39 => 8,  35 => 7,  29 => 4,  22 => 2,  19 => 1,);
+        return array (  52 => 15,  46 => 12,  39 => 8,  35 => 7,  29 => 4,  22 => 2,  19 => 1,);
     }
 }

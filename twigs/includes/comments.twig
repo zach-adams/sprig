@@ -1,10 +1,10 @@
 {% if wp.post_password_required == false and wp.comments_open %}
     <h3>Comments</h3>
-    {% set comments = wp.get_comments({'post_id':postid},{'status':'approve'}) %}
+    {% set comments = wp.get_comments({'post_id':wp.get_the_ID,'status':'approve'}) %}
     <section id="comments">
         {% if comments is not empty %}
             <ol class="media-list">
-                {{ wp.wp_list_comments(wp.getCommentWalker, comments) }}
+                {{ wp.wp_list_comments({'walker':wp.returnObject('sprig_Walker_Comment')}, comments) }}
             </ol>
             {% if wp.get_comment_pages_count > 1 and wp.get_option('page_comments') %}
                 <nav>
@@ -40,8 +40,9 @@
             {% else %}
                 <form action="{{ wp.get_option('siteurl') }}/wp-comments-post.php" method="post" id="commentform">
                 {% if wp.is_user_logged_in %}
+                    {% set userinfo = wp.wp_get_current_user %}
                     <p>
-                        Logged in as <a href="{{ wp.get_option('siteurl') }}/wp-admin/profile.php">{{ userinfo.display_name }}</a>
+                        Logged in as <a href="{{ wp.get_option('siteurl') }}/wp-admin/profile.php">{{ userinfo.display_name }}</a> |
                         <a href="{{ wp.wp_logout_url(wp.get_permalink()) }}" title="Log out of this account">Log Out</a>
                     </p>
                 {% else %}
@@ -79,7 +80,7 @@
                     </div>
                     <p><input name="submit" class="btn btn-primary" type="submit" id="submit" value="Submit Comment"></p>
                 {{ wp.comment_id_fields }}
-                {{ wp.do_action('comment_form', postid) }}
+                {{ wp.do_action('comment_form', wp.get_the_ID) }}
                 </form>
             {% endif %}
         {% endif %}

@@ -16,29 +16,35 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<article id=\"post-";
+        echo "
+<article id=\"post-";
+        // line 2
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_ID", array());
-        echo "\">
-    <header class=\"entry-header\">
-        <h1 class=\"entry-title\">";
-        // line 3
+        echo "\" ";
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "post_class", array());
+        echo ">
+    <header class=\"page-header\">
+        <h1>";
+        // line 4
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_title", array());
         echo "</h1>
-
-        <div class=\"entry-meta\">
-
-        </div><!-- .entry-meta -->
-    </header><!-- .entry-header -->
-
+    </header>
     <div class=\"entry-content\">
         ";
-        // line 11
+        // line 7
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_content", array());
+        echo "
+        ";
+        // line 8
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "wp_link_pages", array(0 => "echo=0"), "method");
         echo "
     </div><!-- .entry-content -->
 
     <footer class=\"entry-footer\">
-
+        ";
+        // line 12
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "edit_post_link", array());
+        echo "
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->";
     }
@@ -55,6 +61,6 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
 
     public function getDebugInfo()
     {
-        return array (  36 => 11,  25 => 3,  19 => 1,);
+        return array (  46 => 12,  39 => 8,  35 => 7,  29 => 4,  22 => 2,  19 => 1,);
     }
 }

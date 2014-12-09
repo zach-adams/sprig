@@ -1,18 +1,14 @@
 <article id="post-{{ wp.the_ID }}">
     <header class="entry-header">
         <h1 class="entry-title">{{ wp.the_title }}</h1>
-
         <div class="entry-meta">
             {% include 'includes/entry-meta.twig' %}
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
     <div class="entry-content">
-        {% if wp.has_post_thumbnail %}
-            {{ wp.the_post_thumbnail }}
-        {% endif %}
         {{ wp.the_content }}
-        {{ wp.wp_link_pages('echo=0') }}
+        {{ wp.wp_link_pages({'echo':'0'}) }}
 
     </div><!-- .entry-content -->
 

@@ -113,8 +113,8 @@ gulp.task('vendor-build', function() {
 // == IMAGE TASKS == //
 
 // = Any images in the src/img folder are minified then copied over to the dist/img folder = //
-gulp.task('imagemin', function () {
-  return gulp.src('src/img/*')
+gulp.task('imageminify', function () {
+  return gulp.src('dist/img/*')
       .pipe(imagemin({
           progressive: true,
           svgoPlugins: [{removeViewBox: false}],
@@ -130,8 +130,7 @@ gulp.task('imagemin', function () {
 // = Also watches all PHP, CSS, JS and the image folder in the dist folder for any changes then triggers livereload
 gulp.task('watch', function() {
   gulp.watch('src/sass/**/*.scss', ['styles-dev']);
-  gulp.watch('src/js/**/*.js', ['scripts-dev']);
-  gulp.watch('src/img/**', ['imagemin']);
+  gulp.watch('src/js/**/*.js', ['scripts-dev']);\
 
   livereload.listen();
   gulp.watch('**/*.php').on('change', livereload.changed);
@@ -150,7 +149,6 @@ gulp.task('dev', ['clean', 'vendor-dev', 'styles-dev', 'scripts-dev']);
 // = Build Task = //
 gulp.task('build', ['clean', 'vendor-build', 'styles-build', 'scripts-build']);
 // = Image Task = //
-gulp.task('image', ['imagemin']);
-gulp.task('image-clear', ['clean-images', 'imagemin']);
+gulp.task('imagemin', ['imageminify']);
 // = Default Task = //
 gulp.task('default', ['dev', 'watch']);

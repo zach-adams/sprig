@@ -91,21 +91,8 @@ big {
   position: relative;
 }
 
-hr {
-  border: 0;
-  height: 1px;
-  margin-bottom: 1.5em;
-}
-
-img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
-}
-
-figure {
-  margin: 0;
+.clearfix {
+  clear: both;
 }
 
 button, input, select, textarea {
@@ -150,45 +137,6 @@ table {
 
 th {
   font-weight: bold;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  border: 1px solid;
-  background-clip: padding-box;
-  /* stops bg color from leaking outside the border: */
-  border-radius: 3px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
-  /* Improves usability and consistency of cursor style between image-type 'input' and others */
-  -webkit-appearance: button;
-  /* Corrects inability to style clickable 'input' types in iOS */
-  font-size: 12px;
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: .6em 1em .4em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
-}
-
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="checkbox"],
@@ -433,18 +381,4 @@ p.byline {
 }
 
 /* Layout Stylings */
-.main {
-  width: 100%;
-}
-
-.main.sidebar {
-  width: 70%;
-  float: left;
-}
-
-.sidebar {
-  width: 25%;
-  float: right;
-}
-
 /* Page specific stylings */

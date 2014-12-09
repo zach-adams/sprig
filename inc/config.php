@@ -11,6 +11,12 @@ function getBootstrapNavWalker() {
 	);
 	return $return;
 }
+function getCommentWalker() {
+	$return = array(
+		'walker'    => new sprig_Walker_Comment()
+	);
+	return $return;
+}
 
 /**
  * Enable theme features

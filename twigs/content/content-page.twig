@@ -1,17 +1,14 @@
-<article id="post-{{ wp.the_ID }}">
-    <header class="entry-header">
-        <h1 class="entry-title">{{ wp.the_title }}</h1>
 
-        <div class="entry-meta">
-
-        </div><!-- .entry-meta -->
-    </header><!-- .entry-header -->
-
+<article id="post-{{ wp.the_ID }}" {{ wp.post_class }}>
+    <header class="page-header">
+        <h1>{{ wp.the_title }}</h1>
+    </header>
     <div class="entry-content">
         {{ wp.the_content }}
+        {{ wp.wp_link_pages('echo=0') }}
     </div><!-- .entry-content -->
 
     <footer class="entry-footer">
-
+        {{ wp.edit_post_link }}
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

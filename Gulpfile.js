@@ -37,7 +37,7 @@ gulp.task('clean-images', function(){
 
 // = Only compiles SASS and autoprefixes = //
 gulp.task('styles-dev', function() {
-  return gulp.src('src/sass/*.scss')
+  return gulp.src('src/scss/*.scss')
     .pipe(plumber())
     .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
@@ -45,7 +45,7 @@ gulp.task('styles-dev', function() {
 });
 // = Compiles SASS, autoprefixes then minifies the final version = //
 gulp.task('styles-build', function() {
-  return gulp.src('src/sass/*.scss')
+  return gulp.src('src/scss/*.scss')
     .pipe(plumber())
     .pipe(sass({ style: 'expanded' }))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
@@ -129,8 +129,8 @@ gulp.task('imageminify', function () {
 // = Watches all SASS, JS, and the image folder for any changes, then runs the appropriate task. 
 // = Also watches all PHP, CSS, JS and the image folder in the dist folder for any changes then triggers livereload
 gulp.task('watch', function() {
-  gulp.watch('src/sass/**/*.scss', ['styles-dev']);
-  gulp.watch('src/js/**/*.js', ['scripts-dev']);\
+  gulp.watch('src/scss/**/*.scss', ['styles-dev']);
+  gulp.watch('src/js/**/*.js', ['scripts-dev']);
 
   livereload.listen();
   gulp.watch('**/*.php').on('change', livereload.changed);

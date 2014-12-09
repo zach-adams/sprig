@@ -16,11 +16,31 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
+        echo "<article id=\"post-";
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_ID", array());
+        echo "\">
+    <header class=\"entry-header\">
+        <h1 class=\"entry-title\">";
+        // line 3
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_title", array());
+        echo "</h1>
+
+        <div class=\"entry-meta\">
+
+        </div><!-- .entry-meta -->
+    </header><!-- .entry-header -->
+
+    <div class=\"entry-content\">
+        ";
+        // line 11
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "the_content", array());
         echo "
-";
-        // line 2
-        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "wp_link_pages", array(0 => array(0 => array("before" => "<nav class=\"pagination\">"), 1 => array("after" => "</nav>"))), "method");
+    </div><!-- .entry-content -->
+
+    <footer class=\"entry-footer\">
+
+    </footer><!-- .entry-footer -->
+</article><!-- #post-## -->";
     }
 
     public function getTemplateName()
@@ -35,6 +55,6 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
 
     public function getDebugInfo()
     {
-        return array (  23 => 2,  19 => 1,);
+        return array (  36 => 11,  25 => 3,  19 => 1,);
     }
 }

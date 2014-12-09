@@ -16,13 +16,11 @@ class __TwigTemplate_508392134a81910979968651192ed292ef40d05eae656f469160e6dcf88
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<time class=\"updated\" datetime=\"";
+        echo "<p class=\"byline author vcard\"><time class=\"updated\" datetime=\"";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_the_time", array(0 => "c"), "method");
         echo "\">";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_the_date", array(), "method");
-        echo "</time>
-<p class=\"byline author vcard\">By <a href=\"";
-        // line 2
+        echo "</time> By <a href=\"";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_author_posts_url", array(0 => $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_the_author_meta", array(0 => "ID"), "method")), "method");
         echo "\" rel=\"author\" class=\"fn\">";
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_the_author", array(), "method");
@@ -41,6 +39,6 @@ class __TwigTemplate_508392134a81910979968651192ed292ef40d05eae656f469160e6dcf88
 
     public function getDebugInfo()
     {
-        return array (  26 => 2,  19 => 1,);
+        return array (  19 => 1,);
     }
 }

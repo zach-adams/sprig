@@ -7,7 +7,7 @@ class __TwigTemplate_76cd15c3fdaf801c56ba7177521ccd8dd7cd78881b44d23baeaa53bfcdd
     {
         parent::__construct($env);
 
-        $this->parent = $this->env->loadTemplate("layouts/base.twig");
+        $this->parent = $this->env->loadTemplate("base.twig");
 
         $this->blocks = array(
             'content' => array($this, 'block_content'),
@@ -16,7 +16,7 @@ class __TwigTemplate_76cd15c3fdaf801c56ba7177521ccd8dd7cd78881b44d23baeaa53bfcdd
 
     protected function doGetParent(array $context)
     {
-        return "layouts/base.twig";
+        return "base.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -28,8 +28,15 @@ class __TwigTemplate_76cd15c3fdaf801c56ba7177521ccd8dd7cd78881b44d23baeaa53bfcdd
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "    ";
+        echo "    <div id=\"primary\" class=\"content-area\">
+        <main id=\"main\" class=\"site-main\" role=\"main\">
+            ";
+        // line 6
         $this->env->loadTemplate("content/content-404.twig")->display($context);
+        // line 7
+        echo "        </main><!-- #main -->
+    </div><!-- #primary -->
+";
     }
 
     public function getTemplateName()
@@ -44,6 +51,6 @@ class __TwigTemplate_76cd15c3fdaf801c56ba7177521ccd8dd7cd78881b44d23baeaa53bfcdd
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,);
+        return array (  37 => 7,  35 => 6,  31 => 4,  28 => 3,);
     }
 }

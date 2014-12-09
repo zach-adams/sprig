@@ -16,9 +16,10 @@ class __TwigTemplate_f4bcab61c8ba16f1aac4d70bf35373cb996ae28f223ea88f3d358c2ead9
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<h3>Maybe try searching for it?</h3>
+        echo "<h1>404 Not Found <span style=\"font-size:70%;\">Sorry :(</span></h1>
+<p>Maybe try searching for it?</p>
 ";
-        // line 2
+        // line 3
         echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "get_search_form", array());
     }
 
@@ -34,6 +35,6 @@ class __TwigTemplate_f4bcab61c8ba16f1aac4d70bf35373cb996ae28f223ea88f3d358c2ead9
 
     public function getDebugInfo()
     {
-        return array (  22 => 2,  19 => 1,);
+        return array (  23 => 3,  19 => 1,);
     }
 }

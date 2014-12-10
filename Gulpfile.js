@@ -134,6 +134,7 @@ gulp.task('watch', function() {
 
   livereload.listen();
   gulp.watch('**/*.php').on('change', livereload.changed);
+  gulp.watch('**/*.twig').on('change', livereload.changed);
   gulp.watch('dist/css/*.css').on('change', livereload.changed);
   gulp.watch('dist/js/*.js').on('change', livereload.changed);
   gulp.watch('dist/img/**').on('change', livereload.changed);

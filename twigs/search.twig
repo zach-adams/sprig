@@ -6,6 +6,7 @@
     </header>
     {% for post in posts %} {{ wp.the_post }}
         {% include 'content/content-excerpt.twig' %}
+        <hr/>
     {% endfor %}
     {% if posts is empty %}
         {% include 'content/content-none.twig' %}

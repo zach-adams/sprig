@@ -154,3 +154,20 @@ That's just about it! Let me know if you have any questions and I'll be sure to 
 ## Issues
 
 See the Wiki for current known issues
+
+
+```php
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+    {% set posts = wp.newLoop({
+        'orderby':'name',
+        'order':'ASC'
+    }) %}
+    {% for post in posts %}{{ wp.newPostData(post) }}
+        {% include 'content/content-excerpt.twig' %}
+        <hr/>
+    {% endfor %}
+    {% include 'includes/paging.twig' %}
+{% endblock %}
+```

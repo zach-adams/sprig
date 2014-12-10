@@ -9,6 +9,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+  text-overflow: ellipsis;
 }
 
 p {
@@ -392,4 +393,8 @@ p.byline {
 }
 
 /* Layout Stylings */
+.entry-footer {
+  clear: both;
+}
+
 /* Page specific stylings */

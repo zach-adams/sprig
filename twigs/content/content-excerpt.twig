@@ -2,7 +2,7 @@
     <div class="media">
         {% if wp.has_post_thumbnail %}
             <a class="media-left" href="{{ wp.the_permalink }}" title="{{ wp.the_title }}">
-                {{ wp.the_post_thumbnail('thumbnail') }}
+                {{ wp.the_post_thumbnail('thumbnail', {'class':'img-thumbnail'}) }}
             </a>
         {% endif %}
         <div class="media-body">

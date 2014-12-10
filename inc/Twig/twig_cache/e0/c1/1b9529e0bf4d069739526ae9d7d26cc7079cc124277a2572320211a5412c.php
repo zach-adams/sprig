@@ -41,7 +41,7 @@ class __TwigTemplate_e0c11b9529e0bf4d069739526ae9d7d26cc7079cc124277a2572320211a
     <footer class=\"entry-footer\">
         ";
         // line 11
-        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "edit_post_link", array());
+        echo $this->getAttribute((isset($context["wp"]) ? $context["wp"] : null), "edit_post_link", array(0 => "Edit", 1 => "<small>", 2 => "</small>"), "method");
         echo "
     </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

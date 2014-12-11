@@ -9,6 +9,24 @@
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
+.well {
+    h1,h2,h3,h4,h5,h6 {
+        margin-top:0px;
+    }
+}
+article.post {
+  .page-header {
+    border-bottom-width:0;
+    padding-bottom: 0;
+    p.lead {
+      margin-bottom:0;
+    }
+  }
+  img {
+    max-width:100%;
+    height:auto;
+  }
+}
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;

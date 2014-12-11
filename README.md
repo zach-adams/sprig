@@ -1,4 +1,4 @@
-[Sprig Wordpress Starter Theme](http://sprigwp.com/)
+Sprig Wordpress Starter Theme
 =========
 
 Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/), Sprig has tons of functions and useful Wordpress features essential to any theme.

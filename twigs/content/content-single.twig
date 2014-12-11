@@ -1,11 +1,19 @@
 <article id="post-{{ wp.the_ID }}" {{ wp.post_class }}>
     <header class="page-header">
         <h1>{{ wp.the_title }}</h1>
+        <p class="lead">By <a href="{{ wp.get_author_posts_url(wp.get_the_author_meta('ID')) }}" rel="author" class="fn">{{ wp.get_the_author() }}</a></p>
     </header><!-- .entry-header -->
 
     <div class="entry-meta">
         {% include 'includes/entry-meta.twig' %}
     </div><!-- .entry-meta -->
+
+    <div class="entry-featured-image">
+        {% if wp.has_post_thumbnail %}
+            <p><a href="">{{ wp.the_post_thumbnail('full', {'class':'img-thumbnail'}) }}</a></p>
+            <hr/>
+        {% endif %}
+    </div>
 
     <div class="entry-content">
         {{ wp.the_content }}

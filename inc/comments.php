@@ -31,8 +31,12 @@ class sprig_Walker_Comment extends Walker_Comment {
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
     <?php echo get_avatar($comment, $size = '64'); ?>
     <div class="media-body">
-    <h4 class="media-heading"><?php echo get_comment_author_link(); ?></h4>
-    <time datetime="<?php echo get_comment_date('c'); ?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)); ?>"><?php printf(__('%1$s', 'sprig'), get_comment_date(),  get_comment_time()); ?></a></time>
+    <h4 class="media-heading"><?php echo get_comment_author_link(); ?>
+        <small>
+	        <time datetime="<?php echo get_comment_date('c'); ?>"><?php printf(__('%1$s', 'sprig'), get_comment_date(),  get_comment_time()); ?></time> at <?php comment_time('G:i A'); ?>
+        </small>
+    </h4>
+
     <?php edit_comment_link(__('(Edit)', 'sprig'), '', ''); ?>
 
     <?php if ($comment->comment_approved == '0') : ?>

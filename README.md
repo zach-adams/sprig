@@ -1,47 +1,49 @@
 [Sprig Wordpress Starter Theme](http://sprigwp.com/)
 =========
 
-## Create themes with the power of Laravel's Blade
+Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/) Sprig has tons of functions and useful Wordpress features essential to any theme.
 
-Sprig is a Wordpress Starter Theme with the power of Laravel's Blade templating engine included, allowing you to develop Wordpress sites more quickly then you ever have before. It includes HTML5 syntax, Bootstrap and Font Awesome by default.
-
-Designed by [Zach Adams](http://zach-adams.com), Sprig is built off of [Roots Wordpress Starter Theme](https://github.com/roots/roots) and the [Blade Wordpress Plugin](https://github.com/MikaelMattsson/blade)
-
-Special Thanks to [Mikael Mattsson](https://github.com/MikaelMattsson) and the Team at [Roots](http://roots.io) for making the Blade Wordpress Plugin and the Roots Starter Theme respectively
+Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the Team at [Roots](http://roots.io), and the creators of [underscore](https://github.com/Automattic/_s) for making the Twigpress Wordpress Plugin, the Roots Starter Theme and the _s Theme respectively.
 
 ## Features
 
-* [Laravel's Blade](http://laravel3.veliovgroup.com/docs/views/templating) templating engine for even quicker Wordpress theme development
+* [Twig Templating Engine](http://twig.sensiolabs.org/)
 * [Gulp](http://gulpjs.com/) for SASS compiling, file concatination, image minifying, javascript uglifying, and livereload
 * [Bower](http://bower.io/) for front-end package management
-* [Bootstrap Ready](http://getbootstrap.com/)
+* [Bootstrap](http://getbootstrap.com/)
 * HTML5 Ready
 * Tons of useful functions and theme activation thanks to [Roots](https://github.com/roots/roots)
 
-## Requirements
-
-* PHP 5.5 or higher
-* Apache or nginx
-* Wordpress 3.0.0 or higher
-
 ## Installing
 
-1. Clone this repo - `git clone git@github.com:zach-adams/sprig-wp-theme.git` or [download the zip file](https://github.com/zach-adams/sprig-wp-theme/archive/master.zip) and install it like a normal Wordpress theme.
+1. Clone this repo - `git clone git@github.com:zach-adams/sprig.git` or [download the zip file](https://github.com/zach-adams/sprig/archive/master.zip) and install it like a normal Wordpress theme.
 2. Go to the theme directory and run `sudo npm install` or `npm install`
 3. Run `bower install` to install dependencies
 4. Run `gulp dev` to compile the initial css and js or just `gulp` to compile initial css and js and then run watch task
+5. Run `gulp build` when you're ready for your assets to be concatinated and minified
 
 ## Theme Development
 
 ### Directory Structure
 
 ```
-+-- dist/ - Distribution/Production files, Gulp takes care of this folder
-+-- inc/ - Various helpful functions and Blade code. All included in function.php
-+-- lang/ - Language code
-+-- src/ - Development Files
++-- dist/ - Distribution/Production files
 |   +-- fonts/ - Font Files
-|   +-- img/ - Pre-optimized images (images optimized by gulp)
+|   +-- img/ - Images (images optimized by gulp in `gulp imagemin`)
++-- inc/ - Various helpful functions and Twig code. All included in function.php
+|   +-- Twig/ - Twig Engine and init code
+|   +-- activation.php - Code to run on theme activation
+|   +-- comments.php - Custom comments walker optimized for Bootstrap
+|   +-- config.php - Theme configuration options
+|   +-- extras.php - Some extra functions and important Twig Wordpress helper functions
+|   +-- gallery.php - Cleans up the gallery shortcode and optimizes it for Bootstrap
+|   +-- init.php - Code to run on theme init
+|   +-- scripts.php - Scripts queueing
+|   +-- titles.php - Better titles function (Thanks to _s!)
+|   +-- twigpress.php - Loader for the Twig Engine
+|   +-- utils.php - Utility functions
+|   +-- wp_bootstrap_navwalker.php - Navwalker optimized for Bootstrap
++-- src/ - Development Files
 |   +-- js/ - Javascript files
 |   +-- sass/ - Default SASS directory
 |	|	+-- base/ - Basic CSS styles for HTML, Typography, Colors, etc.
@@ -49,10 +51,10 @@ Special Thanks to [Mikael Mattsson](https://github.com/MikaelMattsson) and the T
 |	|	+-- helpers/ - SASS helpers, variables, mixins, paths
 |	|	+-- layout/ - Header, Footer, Navigation, Site, etc.
 |	|	+-- pages/ - Page specific code (home, contact, etc.)
-|   +-- vendor/ - Where your vendor code goes (Bower install's here)
-+-- templates/ - Blade templating
++-- vendor/ - Vendor files, bower installs here
++-- twigs/ - Twig templates go here
 |   +-- content/ - Main content for the templates
-|   +-- includes/ - Various includes (Header, Footer, etc.)
+|   +-- includes/ - Various includes
 |   +-- layouts/ - Fundamental layouts of the templates
 ```
 
@@ -64,14 +66,13 @@ Install Gulp with `npm install -g gulp` and Bower with `npm install -g bower`
 
 * `gulp dev` - Compiles SASS (without minification), concatinates CSS included with Bower (read in Bower section), copies main.js
 * `gulp build` - Compiles SASS (with minifcation), concatinates and minifies CSS included with Bower (read in Bower section), copies main.js
-* `gulp watch` - Watches src/ and dist/ folders for changes (as well as all PHP and Blade files) and triggers livereload when it detects one
-* `gulp image` - Minifies images in src/img/ to dist/img/
-* `gulp image-clear` - Clears all images out of dist/img/ and re-minifies all of them
+* `gulp watch` - Watches src/ and dist/ folders for changes (as well as all PHP and Twig files) and triggers livereload when it detects one
+* `gulp imagemin` - Minifies images in /dist/img
 * `gulp` - Runs `gulp dev` then `gulp watch`
 
 ### Bower
 
-Read more about bower [here](http://bower.io/). Bower installs to the src/vendor directory. 
+Read more about bower [here](http://bower.io/). Bower installs to the vendor/ directory. 
 
 #### How your dependencies are added to vendor.css/vendor.js
 
@@ -98,26 +99,30 @@ Gulp has a plugin called main-bower-files that can read the main files in each b
 
 This theme comes with the [Bootstrap Nav Walker](https://github.com/twittem/wp-bootstrap-navwalker) developed by [twittem](https://github.com/twittem/). Reference the [Github](https://github.com/twittem/wp-bootstrap-navwalker) page on how to make changes.
 
-## What's Blade?
+## What's Twig and why use it??
 
-To quote Laravel's website: 
-> Blade is a simple, yet powerful templating engine provided with Laravel. Unlike controller layouts, Blade is driven by template inheritance and sections. All Blade templates should use the .blade.php extension.
+Twig is a flexible, fast, and secure template engine for PHP. It allows developers to write and structure their themes quickly and understandably. 
 
-Luckily Mikael Mattsson of the [Blade Wordpress Plugin](https://github.com/MikaelMattsson/blade) made some custom Wordpress Blade sections we can use so instead of writing:
+With Twig instead of writing:
 
+```php
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    	<a href="<?php the_permalink() ?>"><?php the_title() ?></a><br>
+    	<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 	<?php endwhile; else: ?>
-    	<p>404</p>
+    	<p>Nothing here</p>
 	<?php endif; ?>
+```
 
 We can use:
 
-	@wpposts
-    	<a href="{{the_permalink()}}">{{the_title()}}</a><br>
-	@wpempty
-    	<p>404</p>
-	@wpend
+```php
+    {% for post in posts %} {{ wp.the_post }}
+        <a href="{{ wp.the_permalink }}">{{ wp.the_title }}</a>
+    {% endfor %}
+    {% if posts is empty %}
+        <p>Nothing here</p>
+    {% endif %}
+```
 
 See more in the wiki!
 

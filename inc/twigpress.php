@@ -74,3 +74,21 @@
 	function twigpress_get_the_content() {
 		return str_replace(']]>', ']]&gt;', apply_filters('the_content', get_the_content()));
 	}
+
+
+
+/**
+ * MODIFICTATIONS: Additional functions to include in Twig Templates
+ */
+function returnObject($obj, $args = array()) {
+	return new $obj($args);
+}
+function newLoop($args = array()) {
+	$query = get_posts($args);
+	return $query;
+}
+function newPostData($newpost) {
+	global $post;
+	$post = $newpost;
+	setup_postdata($post);
+}

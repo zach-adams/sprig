@@ -1,4 +1,4 @@
-{% extends 'layouts/base.twig' %}
+{% extends 'layouts/sidebar.twig' %}
 
 {% block content %}
     <header class="page-header">
@@ -12,4 +12,8 @@
         {% include 'content/content-none.twig' %}
     {% endif %}
     {% include 'includes/paging.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% set sidebar = wp.dynamic_sidebar('primary') %}
 {% endblock %}

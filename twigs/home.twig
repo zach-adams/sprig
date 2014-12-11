@@ -1,4 +1,4 @@
-{% extends 'layouts/base.twig' %}
+{% extends 'layouts/sidebar.twig' %}
 
 {% block content %}
     {% for post in posts %} {{ wp.the_post }}
@@ -9,4 +9,8 @@
         {% include 'content/content-none.twig' %}
     {% endif %}
     {% include 'includes/paging.twig' %}
+{% endblock %}
+
+{% block sidebar %}
+    {% set sidebar = wp.dynamic_sidebar('primary') %}
 {% endblock %}

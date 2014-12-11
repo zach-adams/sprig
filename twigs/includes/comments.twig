@@ -31,7 +31,7 @@
             <h4>No Comments!</h4>
         {% endif %}
     </section>
-    <section id="respond">
+    <section id="respond" class="well">
         {% if wp.comments_open %}
             <h3>{{ wp.comment_form_title('Leave a Reply', 'Leave a Reply to') }}</h3>
             <p class="cancel-comment-reply">{{ wp.cancel_comment_reply_link }}</p>

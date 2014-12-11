@@ -1,3 +1,5 @@
-<small>
-    <p class="byline author vcard text-muted"><time class="updated" datetime="{{ wp.get_the_time('c') }}">{{ wp.get_the_date() }}</time> By <a href="{{ wp.get_author_posts_url(wp.get_the_author_meta('ID')) }}" rel="author" class="fn">{{ wp.get_the_author() }}</a></p>
-</small>
+<hr/>
+<p>
+    <span class="glyphicon glyphicon-time"></span> Posted on {{ wp.get_the_date() }}
+</p>
+<hr/>

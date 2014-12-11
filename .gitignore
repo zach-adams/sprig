@@ -3,5 +3,5 @@ node_modules/*
 vendor/*
 inc/Twig/twig_cache/*
 .DS_Store
-.idea/*
+.idea/
 dist/*

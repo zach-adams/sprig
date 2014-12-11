@@ -1,7 +1,7 @@
 [Sprig Wordpress Starter Theme](http://sprigwp.com/)
 =========
 
-Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/) Sprig has tons of functions and useful Wordpress features essential to any theme.
+Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/), Sprig has tons of functions and useful Wordpress features essential to any theme.
 
 Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the Team at [Roots](http://roots.io), and the creators of [underscore](https://github.com/Automattic/_s) for making the Twigpress Wordpress Plugin, the Roots Starter Theme and the _s Theme respectively.
 
@@ -103,17 +103,7 @@ This theme comes with the [Bootstrap Nav Walker](https://github.com/twittem/wp-b
 
 Twig is a flexible, fast, and secure template engine for PHP. It allows developers to write and structure their themes quickly and understandably. 
 
-With Twig instead of writing:
-
-```php
-	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    	<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-	<?php endwhile; else: ?>
-    	<p>Nothing here</p>
-	<?php endif; ?>
-```
-
-We can use:
+Here's the Wordpress loop in Twig:
 
 ```php
     {% for post in posts %} {{ wp.the_post }}
@@ -126,33 +116,49 @@ We can use:
 
 See more in the wiki!
 
-## How is Blade used in this theme?
+## How is Twig used in this theme?
 
-When the theme is loaded it attaches itself to the template loader and runs the template specified through the nifty Blade Engine included. You'll notice all the the regular theme development files you'd expect are in their default locations (single.php, page.php, etc.), however if we look at page.php, they look pretty weird:
+Twig is loaded in the theme functions in the twigpress.php file in the inc/ directory. After it has been loaded the function `twigpress_render_twig_template` is available for us to use. If we look at all the top-level theme files you'll notice all they have in theme is that function. What that function does is tell Wordpress to look into the twigs/ directory and find the equivalent filename except with .twig as an extension. It then tells Wordpress that Twig will handle the rendering of this file.
+
+## Wordpress Function Arguments
+
+You call functions like normal except with `wp` prepended to them like (wp.the_title) due to reasons explained in Caveats section. Functions can be called like normal:
 
 ```php
-@layout( 'templates.layouts.normal' )
-
-@section('page-content')
-
-	@include('templates.content.page')
-
-@endsection
+wp.comment_form_title('Leave a Reply', 'Leave a Reply to')
 ```
 
-The **Layout** tag is telling Blade to look in the templates/layouts/ for a file called **normal.blade.php**. All forward slashes can be replaced by a period for better readability. 
+If you need to give it an array as an argument you can like so:
 
-If we look in the **normal.blade.php** file we find that there's another **Layout** tag telling Blade to load **base.blade.php**. 
+```php
+wp.get_comments({'post_id':wp.get_the_ID,'status':'approve'})
+```
 
-The Base Layout is the basic structure of your HTML. It includes the Head file, sets the Body tag, includes the Header, wraps the content in a div, includes the footer, and ends the HTML document. The Base Layout is used everytime you call a template.
+This equates to
 
-You'll see in the middle of the **base.blade.php** there's a tag called @yield('content') which is telling this layout to allow other Blade files to put content there. If we go back to **normal.blade.php** you can see the tag @section('content'). What this is telling Blade is that we want to put the 'content' in **normal.blade.php** into the @yield('content') section in base.blade.php.
+```php
+$args = array(
+    'post_id'   =>  get_the_ID(),
+    'status'    =>  'approve'
+);
+get_comments($args);    
+```
 
-You can also see another yield inside of **normal.blade.php**. Why do this? Excellent question. Normal.blade.php is meant to be exactly that. A normal layout. It's how you'd style a typical page in Wordpress. Full-width.blade.php is meant to be a full-width template. Duh. If we look inside it there's no 'container' div which normally sets the width and centers the content. Sidebar.blade.php is a page with a sidebar. See, there's nothing too difficult about it!
+**Note: Twig can not instantiate objects.** So I made a function to do it for you. You can make an object like so:
 
-Back to the yield inside of **normal.blade.php**. If we go back to **page.php** you can see the 'page-content' section links to templates/content/ and a file called front-page.blade.php. The **Content** folder is where you'll put all your main content such as Default Pages, Single Posts, Front Page, and Index.
+```php
+wp.returnObject('sprig_Walker_Comment')
 
-That just leaves the **Includes** folder. In here you'll find the various includes the template needs to function such as the Header and the Footer.
+{{ wp.wp_list_comments({'walker':wp.returnObject('sprig_Walker_Comment')}, comments) }}
+```
+
+## Caveats
+
+There's always a catch. There are some interesting hacks I had to include in order for Twig to play nice with Wordpress. 
+
+- **All Non-Twig functions must be preceded by 'wp'** (e.x. wp.the_title, wp.the_content, etc.). Normally in Twig you'd tell it which functions and variables you'd like to be able to use in the environment, however it would get tedious to add all the Wordpress functions to the Twig Loader. So instead I added a proxy function `wp` which is just a wrapper for `call_user_func_array`. 
+- **Some Wordpress functions don't like to be echoed** (e.x. dynamic_sidebar). Instead you can just use Twig's [set](http://twig.sensiolabs.org/doc/tags/set.html) to not echo but still have the function run (e.x {% set sidebar = dynamic_sidebar('primary') %})
+- **Accessing Global Variables**
 
 That's just about it! Let me know if you have any questions and I'll be sure to answer them! [zach.adams383@gmail.com](mailto:zach-adams383@gmail.com)
 

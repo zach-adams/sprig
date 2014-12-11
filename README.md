@@ -152,33 +152,33 @@ wp.returnObject('sprig_Walker_Comment')
 {{ wp.wp_list_comments({'walker':wp.returnObject('sprig_Walker_Comment')}, comments) }}
 ```
 
+## Custom Loops
+
+You can create custom loops like so:
+
+```php
+{% set posts = wp.newLoop({
+    'orderby':'name',
+    'order':'ASC'
+}) %}
+{% for post in posts %}{{ wp.newPostData(post) }}
+    {% include 'content/content-excerpt.twig' %}
+    <hr/>
+{% endfor %}
+```
+
+The reason for the functions newLoop and newPostData is that Twig doesn't like accessing global variables, so newLoop and newPostData are functions located in `twigpress.php` that access and return them for Twig.
+
 ## Caveats
 
 There's always a catch. There are some interesting hacks I had to include in order for Twig to play nice with Wordpress. 
 
 - **All Non-Twig functions must be preceded by 'wp'** (e.x. wp.the_title, wp.the_content, etc.). Normally in Twig you'd tell it which functions and variables you'd like to be able to use in the environment, however it would get tedious to add all the Wordpress functions to the Twig Loader. So instead I added a proxy function `wp` which is just a wrapper for `call_user_func_array`. 
-- **Some Wordpress functions don't like to be echoed** (e.x. dynamic_sidebar). Instead you can just use Twig's [set](http://twig.sensiolabs.org/doc/tags/set.html) to not echo but still have the function run (e.x {% set sidebar = dynamic_sidebar('primary') %})
-- **Accessing Global Variables**
+- **Some Wordpress functions don't like to be echoed** (e.x. dynamic_sidebar). Instead you can just use Twig's [set](http://twig.sensiolabs.org/doc/tags/set.html) to not echo but still have the function run (e.x {% `set sidebar = dynamic_sidebar('primary') %}`)
+- **Accessing Global Variables**. Twig does NOT like accessing global variables which Wordpress relies on. Instead you'll have to make the global variables. I've already added two, `wp_query` for the wp_query global variable and `posts` which returns all the posts necessary for the Wordpress loop to work. 
 
 That's just about it! Let me know if you have any questions and I'll be sure to answer them! [zach.adams383@gmail.com](mailto:zach-adams383@gmail.com)
 
 ## Issues
 
-See the Wiki for current known issues
-
-
-```php
-{% extends 'layouts/base.twig' %}
-
-{% block content %}
-    {% set posts = wp.newLoop({
-        'orderby':'name',
-        'order':'ASC'
-    }) %}
-    {% for post in posts %}{{ wp.newPostData(post) }}
-        {% include 'content/content-excerpt.twig' %}
-        <hr/>
-    {% endfor %}
-    {% include 'includes/paging.twig' %}
-{% endblock %}
-```
+**WARNING:** This is not even close to being in a stable place, I would **highly** not recommend using this in production yet as there are probably a lot of bugs I haven't found yet. 

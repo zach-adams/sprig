@@ -3,6 +3,8 @@ Sprig Wordpress Starter Theme
 
 Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/), Sprig has tons of functions and useful Wordpress features essential to any theme.
 
+By default Sprig comes with Bootstrap, looking for the Foundation version? [It's right here!](https://github.com/zach-adams/sprig-foundation)
+
 Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the Team at [Roots](http://roots.io), and the creators of [underscore](https://github.com/Automattic/_s) for making the Twigpress Wordpress Plugin, the Roots Starter Theme and the _s Theme respectively.
 
 ## Features

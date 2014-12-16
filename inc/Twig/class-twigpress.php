@@ -168,6 +168,25 @@
 			self::$twig_environment = new Twig_Environment(self::$twig_loader, self::$twig_environment_settings);
 			self::$twig_environment->addExtension(new Twig_Extension_Debug());
 
+			# MODIFICATIONS: Added functions to aid in grabbing Wordpress posts
+			$wpposts = new Twig_SimpleFunction("posts", function($args = array()) {
+				global $wp_query;
+				if ($args == null) {
+					return $wp_query->posts;
+				}
+				else {
+					$query = get_posts($args);
+					return $query;
+				}
+			});
+			$wppostdata = new Twig_SimpleFunction("the_post", function($args) {
+				global $post;
+				$post = $args;
+				setup_postdata($post);
+			});
+			self::$twig_environment->addFunction($wpposts);
+			self::$twig_environment->addFunction($wppostdata);
+
 			# MODIFICATION: Removed variables and functions loader
 			self::$twig_proxy = new Twig_Proxy();
 		}
@@ -198,7 +217,6 @@
 			 */
 			$vals = array(
 				'wp'	    =>	self::$twig_proxy,
-				'posts'	    =>	$this->get_posts(),
 				'wp_query'  =>  $this->wp_query()
 			);
 
@@ -223,15 +241,6 @@
 		 */
 		public function get_chosen_template_name($template) {
 			return self::$template = $template;
-		}
-
-		/**
-		 * MODIFICATION Added function to return Wordpress posts
-		 * Gets the Wordpress posts so we can load them into the Twig Template
-		 */
-		public function get_posts() {
-			global $wp_query;
-			return $wp_query->posts;
 		}
 
 		/**

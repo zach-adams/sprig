@@ -83,12 +83,3 @@
 function returnObject($obj, $args = array()) {
 	return new $obj($args);
 }
-function newLoop($args = array()) {
-	$query = get_posts($args);
-	return $query;
-}
-function newPostData($newpost) {
-	global $post;
-	$post = $newpost;
-	setup_postdata($post);
-}

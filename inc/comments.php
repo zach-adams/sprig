@@ -29,7 +29,9 @@ class sprig_Walker_Comment extends Walker_Comment {
     extract($args, EXTR_SKIP); ?>
 
   <li id="comment-<?php comment_ID(); ?>" <?php comment_class('media comment-' . get_comment_ID()); ?>>
-    <?php echo get_avatar($comment, $size = '64'); ?>
+    <div class="media-left">
+      <?php echo get_avatar($comment, $size = '64'); ?>
+    </div>
     <div class="media-body">
     <h4 class="media-heading"><?php echo get_comment_author_link(); ?>
         <small>

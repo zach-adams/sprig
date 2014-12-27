@@ -31,7 +31,7 @@ Twig is a flexible, fast, and secure template engine for PHP. It allows develope
 Here's the Wordpress loop in Twig:
 
 ```php
-    {% for post in posts() %} {{ the_post(post) }}
+    {% for post in posts() %}
         <a href="{{ wp.the_permalink }}">{{ wp.the_title }}</a>
     {% endfor %}
 ```
@@ -83,7 +83,7 @@ wp.returnObject('sprig_Walker_Comment')
 You can access the Wordpress loop with the `posts()` function. The `posts()` function without any arguments will return the original Wordpress loop. Instead of using `the_post()` like normal you need to pass in the post object so it will setup correctly.
 
 ```php
-{% for post in posts() %}{{ the_post(post) }}
+{% for post in posts() %}
     {{ wp.the_title }}
 {% endfor %}
 ```
@@ -95,8 +95,7 @@ Instead of using an empty `posts` function you can pass in arguments like you wo
 ```php
 {% for post in posts({
     'orderby':'name',
-    'order':'ASC'})
-%}{{ the_post(post) }}
+    'order':'ASC'}) %}
     {% include 'content/content-excerpt.twig' %}
 {% endfor %}
 ```

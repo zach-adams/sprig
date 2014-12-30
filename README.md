@@ -1,11 +1,11 @@
-[Sprig Wordpress Starter Theme](http://sprigwp.com)
+[Sprig WordPress Starter Theme](http://sprigwp.com)
 =========
 
-Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/), Sprig has tons of functions and useful Wordpress features essential to any theme.
+Create themes quicker and easier then ever before with the incredible power of Twig's PHP Templating Engine. Built off of [underscore](https://github.com/Automattic/_s/), [Roots](https://github.com/roots/roots), and [Twigpress](https://wordpress.org/plugins/twigpress/), Sprig has tons of functions and useful WordPress features essential to any theme.
 
 By default Sprig comes with Bootstrap, looking for the Foundation version? [It's right here!](https://github.com/zach-adams/sprig-foundation)
 
-Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the Team at [Roots](http://roots.io), and the creators of [underscore](https://github.com/Automattic/_s) for making the Twigpress Wordpress Plugin, the Roots Starter Theme and the _s Theme respectively.
+Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the Team at [Roots](http://roots.io), and the creators of [underscore](https://github.com/Automattic/_s) for making the Twigpress WordPress Plugin, the Roots Starter Theme and the _s Theme respectively.
 
 ## Features
 
@@ -18,7 +18,7 @@ Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the 
 
 ## Installing
 
-1. Clone this repo - `git clone git@github.com:zach-adams/sprig.git` or [download the zip file](https://github.com/zach-adams/sprig/archive/master.zip) and install it like a normal Wordpress theme.
+1. Clone this repo - `git clone git@github.com:zach-adams/sprig.git` or [download the zip file](https://github.com/zach-adams/sprig/archive/master.zip) and install it like a normal WordPress theme.
 2. Go to the theme directory and run `sudo npm install` or `npm install`
 3. Run `bower install` to install dependencies
 4. Run `gulp dev` to compile the initial css and js or just `gulp` to compile initial css and js and then run watch task
@@ -28,7 +28,7 @@ Special Thanks to [Mike Shaw](https://profiles.wordpress.org/mikeshaw217/), the 
 
 Twig is a flexible, fast, and secure template engine for PHP. It allows developers to write and structure their themes quickly and understandably. 
 
-Here's the Wordpress loop in Twig:
+Here's the WordPress loop in Twig:
 
 ```php
     {% for post in posts() %} {{ the_post(post) }}
@@ -38,9 +38,9 @@ Here's the Wordpress loop in Twig:
 
 ## How is Twig used in this theme?
 
-Twig is loaded in the theme functions in the twigpress.php file in the inc/ directory. After it has been loaded the function `twigpress_render_twig_template` is available for us to use. If we look at all the top-level theme files you'll notice all they have in theme is that function. What that function does is tell Wordpress to look into the twigs/ directory and find the equivalent filename except with .twig as an extension. It then tells Wordpress that Twig will handle the rendering of this file.
+Twig is loaded in the theme functions in the twigpress.php file in the inc/ directory. After it has been loaded the function `twigpress_render_twig_template` is available for us to use. If we look at all the top-level theme files you'll notice all they have in theme is that function. What that function does is tell WordPress to look into the twigs/ directory and find the equivalent filename except with .twig as an extension. It then tells WordPress that Twig will handle the rendering of this file.
 
-## Wordpress Function Arguments
+## WordPress Function Arguments
 
 You call functions like normal except with `wp` prepended to them like (wp.the_title) due to reasons explained in Caveats section. Functions can be called like normal:
 
@@ -78,9 +78,9 @@ wp.returnObject('sprig_Walker_Comment')
 {{ wp.wp_list_comments({'walker':wp.returnObject('sprig_Walker_Comment')}, comments) }}
 ```
 
-## Wordpress Loop
+## WordPress Loop
 
-You can access the Wordpress loop with the `posts()` function. The `posts()` function without any arguments will return the original Wordpress loop. Instead of using `the_post()` like normal you need to pass in the post object so it will setup correctly.
+You can access the WordPress loop with the `posts()` function. The `posts()` function without any arguments will return the original WordPress loop. Instead of using `the_post()` like normal you need to pass in the post object so it will setup correctly.
 
 ```php
 {% for post in posts() %} {{ the_post(post) }}
@@ -88,7 +88,7 @@ You can access the Wordpress loop with the `posts()` function. The `posts()` fun
 {% endfor %}
 ```
 
-### Wordpress Custom Loops
+### WordPress Custom Loops
 
 Instead of using an empty `posts` function you can pass in arguments like you would with [WP_Query](http://codex.wordpress.org/Class_Reference/WP_Query).
 
@@ -113,11 +113,11 @@ You can get Repeater loops like this:
 
 ## Caveats
 
-There's always a catch. There are some interesting hacks I had to include in order for Twig to play nice with Wordpress. 
+There's always a catch. There are some interesting hacks I had to include in order for Twig to play nice with WordPress. 
 
-- **All Non-Twig functions must be preceded by 'wp'** (e.x. wp.the_title, wp.the_content, etc.). Normally in Twig you'd tell it which functions and variables you'd like to be able to use in the environment, however it would get tedious to add all the Wordpress functions to the Twig Loader. So instead I added a proxy function `wp` which is just a wrapper for `call_user_func_array`. 
-- **Some Wordpress functions don't like to be echoed** (e.x. dynamic_sidebar). Instead you can just use Twig's [set](http://twig.sensiolabs.org/doc/tags/set.html) to not echo but still have the function run (e.x {% `set sidebar = dynamic_sidebar('primary') %}`)
-- **Accessing Global Variables**. Twig does NOT like accessing global variables which Wordpress relies on. Instead you'll have to make the global variables. I've already added two, `wp_query` for the wp_query global variable and `posts()` function which returns all the posts necessary for the Wordpress loop to work. 
+- **All Non-Twig functions must be preceded by 'wp'** (e.x. wp.the_title, wp.the_content, etc.). Normally in Twig you'd tell it which functions and variables you'd like to be able to use in the environment, however it would get tedious to add all the WordPress functions to the Twig Loader. So instead I added a proxy function `wp` which is just a wrapper for `call_user_func_array`. 
+- **Some WordPress functions don't like to be echoed** (e.x. dynamic_sidebar). Instead you can just use Twig's [set](http://twig.sensiolabs.org/doc/tags/set.html) to not echo but still have the function run (e.x {% `set sidebar = dynamic_sidebar('primary') %}`)
+- **Accessing Global Variables**. Twig does NOT like accessing global variables which WordPress relies on. Instead you'll have to make the global variables. I've already added two, `wp_query` for the wp_query global variable and `posts()` function which returns all the posts necessary for the WordPress loop to work. 
 
 ### Directory Structure
 
@@ -130,7 +130,7 @@ There's always a catch. There are some interesting hacks I had to include in ord
 |   +-- activation.php - Code to run on theme activation
 |   +-- comments.php - Custom comments walker optimized for Bootstrap
 |   +-- config.php - Theme configuration options
-|   +-- extras.php - Some extra functions and important Twig Wordpress helper functions
+|   +-- extras.php - Some extra functions and important Twig WordPress helper functions
 |   +-- gallery.php - Cleans up the gallery shortcode and optimizes it for Bootstrap
 |   +-- init.php - Code to run on theme init
 |   +-- scripts.php - Scripts queueing
@@ -142,7 +142,7 @@ There's always a catch. There are some interesting hacks I had to include in ord
 |   +-- js/ - Javascript files
 |   +-- sass/ - Default SASS directory
 |	|	+-- base/ - Basic CSS styles for HTML, Typography, Colors, etc.
-|	|	+-- components/ - Wordpress Specific code, tables, buttons, etc.
+|	|	+-- components/ - WordPress Specific code, tables, buttons, etc.
 |	|	+-- helpers/ - SASS helpers, variables, mixins, paths
 |	|	+-- layout/ - Header, Footer, Navigation, Site, etc.
 |	|	+-- pages/ - Page specific code (home, contact, etc.)

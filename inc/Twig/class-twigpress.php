@@ -181,6 +181,11 @@
 			});
 			$wppostdata = new Twig_SimpleFunction("the_post", function($args) {
 				global $post;
+				$this->wp_query()->in_the_loop = true;
+
+				if ( $this->wp_query()->current_post == -1 ) {
+					do_action_ref_array( 'loop_start', array( &$this ) );
+				}
 				$post = $args;
 				setup_postdata($post);
 			});

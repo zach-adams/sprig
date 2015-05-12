@@ -51,6 +51,6 @@ function sprig_title($before = '', $after = '' ) {
 	 */
 	$title = apply_filters( 'get_the_archive_title', $title );
 	if ( ! empty( $title ) ) {
-		echo $before . $title . $after;
+		echo $before , $title , $after;
 	}
 }

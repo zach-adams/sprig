@@ -153,7 +153,11 @@
 		public function setup_twig_environment() {
 			# Include the Twig Autoloader and register Twig
             # MODIFICATION: changed from WP_CONTENT_DIR to dirname(__FILE__)
-			require_once(dirname(__FILE__) . '/Twig/Autoloader.php');
+            
+            		# Define the Twig _Autoloader class if it isn't already defined
+            		if(!class_exists('Twig_Autoloader')) {
+        		    require_once(dirname(__FILE__) . '/Twig/Autoloader.php');
+	                }
 
 			# MODIFICATION: Added require for Twig Proxy Class
 			require_once(dirname(__FILE__) . '/class-twig-proxy.php');
